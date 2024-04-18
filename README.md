@@ -1,8 +1,13 @@
-### 1.快速使用Xlog工具
-1.下载AndroidXlogLibrary工程
-2.在Android Studio中打开导入 xloglibrary module
-3.在你的工程中添加 xloglibrary 依赖
-4.在Application的onCreate方法中初始化XlogUtiles
+### 1.快速使用XLogUtils工具
+1.在settings.gradle中添加 jitpack 仓库
+
+    maven { url 'https://jitpack.io' }
+
+2.在module的build.gradle中添加XLogUtils依赖
+
+    implementation 'com.github.huihui2286433852:AndroidXlogLibrary:v1.0.1'
+
+3.在Application的onCreate方法中初始化XlogUtiles
 
     class MyApp:Application() {
         override fun onCreate() {
@@ -16,12 +21,11 @@
         }
     }
 
-5.在应用退出的时候调用
+4.在应用退出的时候调用
 
         XLogUtils.appenderClose()
 
-
-### 2.Xlog工具使用方法
+### 2.XLogUtils工具使用方法
 
         findViewById<Button>(R.id.btn).setOnClickListener {
             XLogUtils.f("MainActivity","我是一条日志")
