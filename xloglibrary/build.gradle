@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+}
+
+group='com.github.huihui2286433852'
+android {
+    namespace 'com.zzxd.xloglibrary'
+    compileSdk 34
+    defaultConfig {
+        minSdk 21
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ["jniLibs"]
+//        }
+//    }
+
+//    packagingOptions {
+//        exclude'META-INF/DEPENDENCIES'
+//        exclude 'lib/arm64-v8a/libc++_shared.so'
+//        exclude 'lib/arm64-v8a/libmarsxlog.so'
+//        exclude 'lib/armeabi-v7a/libc++_shared.so'
+//        exclude 'lib/armeabi-v7a/libmarsxlog.so'
+//    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    //xlog
+    implementation 'com.tencent.mars:mars-xlog:1.2.5'
+}
